@@ -8,11 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		9A47CDCB1AA1329600FD3307 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A47CDCA1AA1329600FD3307 /* AppDelegate.swift */; };
-		9A47CDCD1AA1329600FD3307 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A47CDCC1AA1329600FD3307 /* ViewController.swift */; };
 		9A47CDD01AA1329600FD3307 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A47CDCE1AA1329600FD3307 /* Main.storyboard */; };
 		9A47CDD21AA1329600FD3307 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A47CDD11AA1329600FD3307 /* Images.xcassets */; };
 		9A47CDD51AA1329600FD3307 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A47CDD31AA1329600FD3307 /* LaunchScreen.xib */; };
 		9A47CDE11AA1329600FD3307 /* pixelEditorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A47CDE01AA1329600FD3307 /* pixelEditorTests.swift */; };
+		9A47CDEB1AA1335400FD3307 /* UserImageCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A47CDEA1AA1335400FD3307 /* UserImageCollectionViewController.swift */; };
+		9A7D41911AA7786A00D8FEAE /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7D41901AA7786A00D8FEAE /* PhotoViewController.swift */; };
+		9AAB85BD1ABDD25900A739FF /* PixelScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AAB85BC1ABDD25900A739FF /* PixelScrollView.swift */; };
+		9AD9F4741AA7A0180096EBBA /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD9F4731AA7A0180096EBBA /* CameraViewController.swift */; };
+		9AEAE36A1AAE174D0054E3E8 /* PixelColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEAE3691AAE174D0054E3E8 /* PixelColorViewController.swift */; };
+		9AEAE36C1AAE22FE0054E3E8 /* CircleColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEAE36B1AAE22FE0054E3E8 /* CircleColorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,13 +34,18 @@
 		9A47CDC51AA1329600FD3307 /* pixelEditor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pixelEditor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A47CDC91AA1329600FD3307 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A47CDCA1AA1329600FD3307 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9A47CDCC1AA1329600FD3307 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9A47CDCF1AA1329600FD3307 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9A47CDD11AA1329600FD3307 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		9A47CDD41AA1329600FD3307 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		9A47CDDA1AA1329600FD3307 /* pixelEditorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = pixelEditorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A47CDDF1AA1329600FD3307 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A47CDE01AA1329600FD3307 /* pixelEditorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pixelEditorTests.swift; sourceTree = "<group>"; };
+		9A47CDEA1AA1335400FD3307 /* UserImageCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserImageCollectionViewController.swift; sourceTree = "<group>"; };
+		9A7D41901AA7786A00D8FEAE /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		9AAB85BC1ABDD25900A739FF /* PixelScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PixelScrollView.swift; sourceTree = "<group>"; };
+		9AD9F4731AA7A0180096EBBA /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		9AEAE3691AAE174D0054E3E8 /* PixelColorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PixelColorViewController.swift; sourceTree = "<group>"; };
+		9AEAE36B1AAE22FE0054E3E8 /* CircleColorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleColorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,8 +88,13 @@
 			isa = PBXGroup;
 			children = (
 				9A47CDCA1AA1329600FD3307 /* AppDelegate.swift */,
-				9A47CDCC1AA1329600FD3307 /* ViewController.swift */,
 				9A47CDCE1AA1329600FD3307 /* Main.storyboard */,
+				9AEAE3691AAE174D0054E3E8 /* PixelColorViewController.swift */,
+				9AD9F4731AA7A0180096EBBA /* CameraViewController.swift */,
+				9A7D41901AA7786A00D8FEAE /* PhotoViewController.swift */,
+				9AAB85BC1ABDD25900A739FF /* PixelScrollView.swift */,
+				9AEAE36B1AAE22FE0054E3E8 /* CircleColorView.swift */,
+				9A47CDEA1AA1335400FD3307 /* UserImageCollectionViewController.swift */,
 				9A47CDD11AA1329600FD3307 /* Images.xcassets */,
 				9A47CDD31AA1329600FD3307 /* LaunchScreen.xib */,
 				9A47CDC81AA1329600FD3307 /* Supporting Files */,
@@ -212,8 +227,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A47CDCD1AA1329600FD3307 /* ViewController.swift in Sources */,
 				9A47CDCB1AA1329600FD3307 /* AppDelegate.swift in Sources */,
+				9AD9F4741AA7A0180096EBBA /* CameraViewController.swift in Sources */,
+				9AEAE36C1AAE22FE0054E3E8 /* CircleColorView.swift in Sources */,
+				9A47CDEB1AA1335400FD3307 /* UserImageCollectionViewController.swift in Sources */,
+				9AEAE36A1AAE174D0054E3E8 /* PixelColorViewController.swift in Sources */,
+				9AAB85BD1ABDD25900A739FF /* PixelScrollView.swift in Sources */,
+				9A7D41911AA7786A00D8FEAE /* PhotoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +361,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = pixelEditor/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -351,6 +372,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = pixelEditor/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -409,6 +431,7 @@
 				9A47CDE61AA1329600FD3307 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9A47CDE71AA1329600FD3307 /* Build configuration list for PBXNativeTarget "pixelEditorTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +440,7 @@
 				9A47CDE91AA1329600FD3307 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
