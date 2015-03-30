@@ -40,37 +40,6 @@ class PhotoViewController: UIViewController {
         loadPhotoFromPath()
     }
     
-    private func loadPhotoFromPath() {
-        var image:UIImage?
-        if let path = imagePath {
-            image = UIImage(contentsOfFile: path.path!)
-        }
-        photoView.image = image
-        if let img = image {
-            println("[Status]Loaded photo from \(imagePath?.path!) successfully")
-        } else {
-            println("[Error]Failed to load photo from \(imagePath?.path!)")
-        }
-    }
-    
-    private func deleteImageAtPath(path:NSURL) {
-        let fileManager = NSFileManager()
-        var err:NSError?
-        fileManager.removeItemAtURL(path, error: &err)
-        if let error = err {
-            println("[Error]\(error)")
-        } else {
-            println("[Status]Deleted photo at path \(imagePath?.path!)")
-        }
-    }
-    
-    func didPressEditButton() {
-        if let pixelEditor = self.storyboard?.instantiateViewControllerWithIdentifier("pixelEditor") as? PixelColorViewController {
-            pixelEditor.imagePath = imagePath
-            self.showViewController(pixelEditor, sender: self)
-        }
-    }
-    
     @IBAction func didPressTrashButton(sender: UIBarButtonItem) {
         let deleteAlert = UIAlertController(title: "Delete Photo?", message: "Would you like to remove this photo?", preferredStyle: .Alert)
         deleteAlert.addAction(UIAlertAction(title: "Yes", style: .Destructive) {
@@ -85,6 +54,51 @@ class PhotoViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+    /**
+    Loads a photo using the imagePath property and assigns it to the image property of the UIImageView.
+    */
+    private func loadPhotoFromPath() {
+        var image:UIImage?
+        if let path = imagePath {
+            image = UIImage(contentsOfFile: path.path!)
+        }
+        photoView.image = image
+        if let img = image {
+            println("[Status]Loaded photo from \(imagePath?.path!) successfully")
+        } else {
+            println("[Error]Failed to load photo from \(imagePath?.path!)")
+        }
+    }
+    
+    
+    /**
+    Deletes the file at the given path.
+    
+    :param: path The path of the file to be removed from the file system.
+    */
+    private func deleteImageAtPath(path:NSURL) {
+        let fileManager = NSFileManager()
+        var err:NSError?
+        fileManager.removeItemAtURL(path, error: &err)
+        if let error = err {
+            println("[Error]\(error)")
+        } else {
+            println("[Status]Deleted photo at path \(imagePath?.path!)")
+        }
+    }
+    
+    
+    /**
+    Instantiates a new PixelColorViewController and presents it.
+    */
+    func didPressEditButton() {
+        if let pixelEditor = self.storyboard?.instantiateViewControllerWithIdentifier("pixelEditor") as? PixelColorViewController {
+            pixelEditor.imagePath = imagePath
+            self.showViewController(pixelEditor, sender: self)
+        }
     }
     
 

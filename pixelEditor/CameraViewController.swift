@@ -63,10 +63,10 @@ class CameraViewController: UIViewController {
         println("[Status]Camera view has loaded")
     }
     
-    override func viewDidAppear(animated: Bool) {
-        
-    }
     
+    /**
+    Creates and displays a UIAlertController which notifies the user that there are no cameras connected to the device.
+    */
     func showNoHardwareAlert() {
         let alert = UIAlertController(title: "No Camera", message: "Could not find a suitable camera to use.", preferredStyle: .Alert)
         alert.addAction(UIAlertAction(title: "Dismiss", style: .Default, handler: {s1 in println("[Error]No hardware input devices found.")}))
@@ -91,6 +91,13 @@ class CameraViewController: UIViewController {
         }
     }
     
+    
+    /**
+    Converts from a type of UIIntergaceOrientation to a type of AVCaptureVideoOrientation.
+    
+    :param: orientation The UIInterfaceOrientation to be converted.
+    :returns: The AVCaptureVideoOrientation equivalent of the input UIInterfaceOrientation.
+    */
     private func getVideoOrientation(orientation:UIInterfaceOrientation)->AVCaptureVideoOrientation {
         var videoOrientation:AVCaptureVideoOrientation
         switch(orientation) {
@@ -201,6 +208,13 @@ class CameraViewController: UIViewController {
         println("[Event]The camera was succesfully switched.")
         
     }
+    
+    /**
+    Saves a given UIImage to the Photo directory within the Documents directory of the application with a given path name.
+    
+    :param: image The UIImage which should be written to disk.
+    :param: withName The path name to use when writing the file.
+    */
     private func saveImage(image:UIImage, withName: String) {
         let fileManager = NSFileManager()
         var imageData = UIImagePNGRepresentation(image)

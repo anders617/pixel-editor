@@ -23,6 +23,9 @@ extension String {
 let reuseIdentifier = "imageCell"
 
 class UserImageCollectionViewController: UICollectionViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    ///TODO: Conditionally reload photo after returning from photo editor
+    
     private var baseDirectory:NSURL?
     private var photoDirectory:NSURL?
     private var photoPaths:[NSURL:UIImage?] = [:]
@@ -62,11 +65,12 @@ class UserImageCollectionViewController: UICollectionViewController, UIImagePick
         //Locate Photos Within Photo Directory
         reloadImagePaths()
         
+        
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
-        // Register cell classes
 
         // Do any additional setup after loading the view.
         collectionView?.backgroundColor = UIColor.whiteColor()
@@ -86,6 +90,7 @@ class UserImageCollectionViewController: UICollectionViewController, UIImagePick
     }
     
     override func viewWillAppear(animated: Bool) {
+        photoPaths = [:]
         reloadImagePaths()
         collectionView?.reloadData()
     }
@@ -203,6 +208,7 @@ class UserImageCollectionViewController: UICollectionViewController, UIImagePick
         } else {
             imageView?.image = UIImage(named: "TestImage")
         }
+        imageView?.contentMode = .ScaleAspectFill
         
     
         return cell

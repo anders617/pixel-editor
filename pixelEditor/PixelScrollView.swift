@@ -9,10 +9,33 @@
 import UIKit
 
 class PixelScrollView: UIScrollView {
+    
+    /**
+        The scalar which the image bounds were mulitplied to fit the UIImageView bounds.
+    */
     var imageScale:CGFloat?
+    
+    /**
+    The bounds of the UIImageView contained within the PixelScrollView.
+    */
     var imageViewBounds: CGRect = CGRectZero
+    
+    /**
+    Tells the PixelScrollView to resize the grid the next time layoutSubviews is called. This value is reset to false after the grid is resized.
+    */
     var shouldResizeGrid = false
-    let RealPixelPerPhotoPixelThreshold:CGFloat = 15
+    
+    /**
+    The horixontal offset of the image within the UIImageView contained in the PixelScrollView.
+    */
+    var imageXOffset:CGFloat = 0
+    
+    /**
+    The vertical offset of the image within the UIImageView contained in the PixelScrollView.
+    */
+    var imageYOffset:CGFloat = 0
+    
+    private let RealPixelPerPhotoPixelThreshold:CGFloat = 15
     
     private var gridLayer:CAShapeLayer?
     
@@ -42,13 +65,13 @@ class PixelScrollView: UIScrollView {
         if let scale = imageScale {
             let realPixelsPerPhotoPixel = zoomScale * scale
             if realPixelsPerPhotoPixel >= RealPixelPerPhotoPixelThreshold {
-                println("[PixelScrollView]Drawing grid to imageView (\(Int(imageViewBounds.width / scale)) vertical;\(Int(imageViewBounds.height / scale)) horizontal)")
+                println("[PixelScrollView]Drawing grid to imageView (\(Int((imageViewBounds.width - 2 * imageXOffset) / scale)) vertical;\(Int((imageViewBounds.height - 2 * imageYOffset) / scale)) horizontal)")
                 //Vertical Lines
-                for i in 0..<Int(imageViewBounds.width / scale) {
+                for i in 0..<Int((imageViewBounds.width - 2 * imageXOffset) / scale) {
                     let lineLayer = CAShapeLayer()
                     let linePath = UIBezierPath()
-                    linePath.moveToPoint(CGPoint(x :CGFloat(i) * realPixelsPerPhotoPixel, y: 0))
-                    linePath.addLineToPoint(CGPoint(x: CGFloat(i) * realPixelsPerPhotoPixel, y: imageViewBounds.height * zoomScale))
+                    linePath.moveToPoint(CGPoint(x :(CGFloat(i)) * realPixelsPerPhotoPixel + imageXOffset * zoomScale, y: imageYOffset * zoomScale))
+                    linePath.addLineToPoint(CGPoint(x: (CGFloat(i)) * realPixelsPerPhotoPixel + imageXOffset * zoomScale, y: (imageViewBounds.height - imageYOffset) * zoomScale))
                     lineLayer.path = linePath.CGPath
                     lineLayer.strokeColor = UIColor.grayColor().CGColor
                     lineLayer.lineWidth = 0.5
@@ -57,11 +80,11 @@ class PixelScrollView: UIScrollView {
                 }
                 
                 //Horizontal Lines
-                for i in 0..<Int(imageViewBounds.height / scale) {
+                for i in 0..<Int((imageViewBounds.height - 2 * imageYOffset) / scale) {
                     let lineLayer = CAShapeLayer()
                     let linePath = UIBezierPath()
-                    linePath.moveToPoint(CGPoint(x: 0, y: CGFloat(i) * realPixelsPerPhotoPixel))
-                    linePath.addLineToPoint(CGPoint(x: imageViewBounds.width * zoomScale, y: CGFloat(i) * realPixelsPerPhotoPixel))
+                    linePath.moveToPoint(CGPoint(x: imageXOffset * zoomScale, y: (CGFloat(i)) * realPixelsPerPhotoPixel + imageYOffset * zoomScale))
+                    linePath.addLineToPoint(CGPoint(x: (imageViewBounds.width - imageXOffset) * zoomScale, y: (CGFloat(i)) * realPixelsPerPhotoPixel + imageYOffset * zoomScale))
                     lineLayer.path = linePath.CGPath
                     lineLayer.strokeColor = UIColor.grayColor().CGColor
                     lineLayer.lineWidth = 0.5

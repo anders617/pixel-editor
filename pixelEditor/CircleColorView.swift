@@ -7,6 +7,10 @@
 //
 
 extension UIColor {
+    
+    /**
+    Convenience initializer to create a UIColor object with red, green and blue components ranging from 0 to 255. The alpha value should be between 0 and 1.
+    */
     convenience init(redComp: CGFloat, greenComp: CGFloat, blueComp: CGFloat, alpha: CGFloat) {
         let red = redComp/255
         let green = greenComp/255
@@ -18,10 +22,18 @@ extension UIColor {
 import UIKit
 
 //@IBDesignable
+/**
+This subclass of UIView displays an oval fit to the bounds of the view. The fill color of the view may be changed through the fillColor property.
+*/
 class CircleColorView: UIView {
     
     private var circleLayer:CAShapeLayer?
+    
+    /**
+    The color with which the circle layer in the CircleColorView will be filled.
+    */
     var fillColor:UIColor?
+    
     private var currentBounds:CGRect?
     
     

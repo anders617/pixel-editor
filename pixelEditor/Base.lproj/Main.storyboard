@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7515.2" systemVersion="14A379a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="3Jt-eR-Kw3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7528.3" systemVersion="14A379a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="3Jt-eR-Kw3">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7512"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7518.3"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -378,11 +378,14 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="50" translatesAutoresizingMaskIntoConstraints="NO" id="LZf-l3-vpK">
+                            <slider opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="200" translatesAutoresizingMaskIntoConstraints="NO" id="LZf-l3-vpK">
                                 <rect key="frame" x="140" y="514" width="258" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="width" priority="250" constant="253" id="SdZ-Wc-Npe"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="didChangeToleranceSlider:" destination="bEg-8Q-OOk" eventType="valueChanged" id="x8g-nk-xuf"/>
+                                </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Tolerance" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rwp-0r-Xx1">
                                 <rect key="frame" x="60" y="514" width="74" height="21"/>
@@ -390,11 +393,20 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WY5-SR-MgM">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="50.00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WY5-SR-MgM">
                                 <rect key="frame" x="403" y="514" width="55" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="55" id="Qkf-L4-5Nz"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FRq-zC-BKI">
+                                <rect key="frame" x="165" y="549" width="51" height="31"/>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Mass Pixel Editing" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WfB-Ho-13h">
+                                <rect key="frame" x="16" y="554" width="141" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -407,6 +419,7 @@
                             <constraint firstItem="d1o-Lt-ezp" firstAttribute="leading" secondItem="3vl-BW-gmM" secondAttribute="trailing" constant="8" id="53T-tv-BSR"/>
                             <constraint firstAttribute="trailingMargin" secondItem="S9b-bn-0UE" secondAttribute="trailing" id="5e4-fC-XHA"/>
                             <constraint firstItem="FMC-6b-Oqn" firstAttribute="top" secondItem="2h4-dU-q1n" secondAttribute="bottom" constant="1" id="6II-HA-rIW"/>
+                            <constraint firstItem="WfB-Ho-13h" firstAttribute="top" secondItem="rwp-0r-Xx1" secondAttribute="bottom" constant="19" id="70T-1O-Uj8"/>
                             <constraint firstItem="3vl-BW-gmM" firstAttribute="leading" secondItem="BiD-9T-jxz" secondAttribute="leading" id="8hj-ba-PVA"/>
                             <constraint firstItem="BiD-9T-jxz" firstAttribute="centerX" secondItem="3vl-BW-gmM" secondAttribute="centerX" constant="-0.5" id="8hy-hw-xmm"/>
                             <constraint firstItem="3vl-BW-gmM" firstAttribute="leading" secondItem="BiD-9T-jxz" secondAttribute="leading" constant="-6" id="8rb-m4-KHC"/>
@@ -429,6 +442,7 @@
                             <constraint firstItem="hOQ-ta-hCu" firstAttribute="width" secondItem="MYn-8i-VIF" secondAttribute="width" id="NX1-u7-8vj"/>
                             <constraint firstItem="sgS-q0-dpW" firstAttribute="centerY" secondItem="2h4-dU-q1n" secondAttribute="centerY" constant="-0.5" id="Qmg-Se-H5s"/>
                             <constraint firstItem="BiD-9T-jxz" firstAttribute="leading" secondItem="MYn-8i-VIF" secondAttribute="leadingMargin" priority="250" constant="6" id="QoV-0c-zUd"/>
+                            <constraint firstItem="WfB-Ho-13h" firstAttribute="centerY" secondItem="FRq-zC-BKI" secondAttribute="centerY" id="Qpo-EW-iSD"/>
                             <constraint firstItem="3vl-BW-gmM" firstAttribute="top" secondItem="hOQ-ta-hCu" secondAttribute="bottom" constant="8" id="TUY-TI-OP7"/>
                             <constraint firstItem="BiD-9T-jxz" firstAttribute="width" relation="lessThanOrEqual" secondItem="3vl-BW-gmM" secondAttribute="width" id="UcA-27-Ty7"/>
                             <constraint firstItem="CQK-fb-5rA" firstAttribute="leading" secondItem="T9z-Lv-4eB" secondAttribute="trailing" constant="8" id="VAu-jY-aw7"/>
@@ -440,6 +454,7 @@
                             <constraint firstItem="sgS-q0-dpW" firstAttribute="bottom" secondItem="3vl-BW-gmM" secondAttribute="bottom" constant="2" id="aXb-oP-p8C"/>
                             <constraint firstItem="3vl-BW-gmM" firstAttribute="centerX" secondItem="BiD-9T-jxz" secondAttribute="centerX" constant="0.5" id="ag0-sf-gQY"/>
                             <constraint firstItem="7r6-Ph-eL6" firstAttribute="leading" secondItem="3vl-BW-gmM" secondAttribute="trailing" constant="8" id="al6-JE-a5A"/>
+                            <constraint firstItem="WfB-Ho-13h" firstAttribute="leading" secondItem="3vl-BW-gmM" secondAttribute="leading" id="bZW-he-ex8"/>
                             <constraint firstItem="Ttw-3s-5Cf" firstAttribute="leading" secondItem="BNb-J3-e27" secondAttribute="trailing" constant="8" id="bnE-CW-FSB"/>
                             <constraint firstItem="hOQ-ta-hCu" firstAttribute="leading" secondItem="MYn-8i-VIF" secondAttribute="leading" id="d07-nv-lFY"/>
                             <constraint firstItem="sgS-q0-dpW" firstAttribute="leading" secondItem="BiD-9T-jxz" secondAttribute="trailing" constant="15" id="dXp-WN-Rhl"/>
@@ -460,6 +475,7 @@
                             <constraint firstItem="3vl-BW-gmM" firstAttribute="top" relation="greaterThanOrEqual" secondItem="hOQ-ta-hCu" secondAttribute="bottom" id="oQt-oe-YJq"/>
                             <constraint firstItem="BiD-9T-jxz" firstAttribute="centerX" secondItem="3vl-BW-gmM" secondAttribute="centerX" id="oX5-Uw-lh5"/>
                             <constraint firstItem="CQK-fb-5rA" firstAttribute="leading" secondItem="BNb-J3-e27" secondAttribute="leading" id="ofS-T5-hzt"/>
+                            <constraint firstItem="FRq-zC-BKI" firstAttribute="leading" secondItem="WfB-Ho-13h" secondAttribute="trailing" constant="8" id="p7y-0g-4sw"/>
                             <constraint firstItem="Ttw-3s-5Cf" firstAttribute="centerX" secondItem="4lP-hJ-KCY" secondAttribute="centerX" id="qr4-PM-RU4"/>
                             <constraint firstItem="T9z-Lv-4eB" firstAttribute="centerY" secondItem="3vl-BW-gmM" secondAttribute="centerY" constant="3" id="rnp-gh-3se"/>
                             <constraint firstItem="FMC-6b-Oqn" firstAttribute="leading" secondItem="7r6-Ph-eL6" secondAttribute="trailing" constant="8" id="scb-Cu-6xb"/>
@@ -495,6 +511,7 @@
                         <outlet property="imageView" destination="pqn-bY-8m9" id="2ZI-Pt-L2R"/>
                         <outlet property="scrollView" destination="hOQ-ta-hCu" id="DWe-Yb-rPU"/>
                         <outlet property="selectedColorView" destination="3vl-BW-gmM" id="OF5-z8-AN8"/>
+                        <outlet property="shouldChangeMultiplePixels" destination="FRq-zC-BKI" id="RgU-93-Ihg"/>
                         <outlet property="toleranceLabel" destination="WY5-SR-MgM" id="LSB-WT-Tn6"/>
                         <outlet property="toleranceSlider" destination="LZf-l3-vpK" id="SOD-Or-to7"/>
                         <outletCollection property="componentSliders" destination="BNb-J3-e27" collectionClass="NSMutableArray" id="Dr2-sU-MNR"/>
